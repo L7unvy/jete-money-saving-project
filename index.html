@@ -9,16 +9,31 @@
 <body>
   <div id="container">
     <h1>Jete Money Saving Project</h1>
+
+    <section id="summary">
+      <h2>สรุปการใช้เงิน</h2>
+      <p id="day-summary">วันนี้: 0 บาท</p>
+      <p id="week-summary">สัปดาห์นี้: 0 บาท</p>
+      <p id="month-summary">เดือนนี้: 0 บาท</p>
+    </section>
+
     <form id="transaction-form">
+      <div class="toggle-type">
+        <label><input type="radio" name="type" value="expense" checked> รายจ่าย</label>
+        <label><input type="radio" name="type" value="income"> รายรับ</label>
+      </div>
+
       <input type="date" id="date" required />
-      <input type="text" id="category" placeholder="หมวดหมู่ (ของกิน ของใช้ ฯลฯ)" required />
-      <input type="text" id="bank" placeholder="ชื่อธนาคาร" required />
-      <input type="number" id="amount" placeholder="จำนวนเงิน" required />
+      <input type="text" id="amount" placeholder="จำนวนเงิน" required />
+      <div id="category-buttons"></div>
+      <button type="button" id="add-category-btn">+ เพิ่มหมวดหมู่</button>
       <input type="file" id="slip" accept="image/*" />
       <button type="submit">เพิ่มรายการ</button>
     </form>
 
-    <div id="transactions"></div>
+    <div id="transactions">
+      <h2>ประวัติย้อนหลัง</h2>
+    </div>
 
     <button id="export">Export เป็น Excel</button>
   </div>
